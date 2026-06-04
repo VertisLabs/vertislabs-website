@@ -68,12 +68,10 @@
     </p>
 
     <div class="mt-8 flex gap-4">
-      <a class="px-6 py-3 bg-cyan-400 text-black rounded-xl font-semibold">
+      <a href="#services" class="px-6 py-3 bg-cyan-400 text-black rounded-xl font-semibold">
         Explore
       </a>
-      <a class="px-6 py-3 border border-white/10 rounded-xl">
-        Contact
-      </a>
+      <a href="#contact" class="px-6 py-3 border border-white/10 rounded-xl">Contact</a>
     </div>
   </div>
 
@@ -140,9 +138,9 @@
     <p class="mt-4 text-white/60">Vertis Labs is open for collaborations.</p>
 
 
-<a class="mt-8 inline-block px-8 py-4 bg-cyan-400 text-black rounded-xl font-semibold">
+<button onclick="openContactModal()" class="mt-8 inline-block px-8 py-4 bg-cyan-400 text-black rounded-xl font-semibold">
   Start a Project
-</a>
+</button>
 
 
   </section>
@@ -152,6 +150,69 @@
   <footer id="contact" class="border-t border-white/10 py-10 text-center text-white/50">
     <p>© 2026 Vertis Labs</p>
   </footer>
+
+
+
+<!-- Contact Modal -->
+<div
+  id="contactModal"
+  onclick="if(event.target === this) closeContactModal()"
+  class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center z-50">
+
+  <div class="bg-zinc-900 border border-white/10 rounded-2xl p-8 w-full max-w-md">
+
+    <div class="flex justify-between items-center mb-6">
+      <h3 class="text-xl font-bold">Contact Vertis Labs</h3>
+
+      <button
+        onclick="closeContactModal()"
+        class="text-white/50 hover:text-white">
+        ✕
+      </button>
+    </div>
+
+    <p class="text-white/60 mb-6">
+      Choose your preferred email provider.
+    </p>
+
+    <div class="space-y-3">
+
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@vertislabs.io&su=Vertis%20Labs%20Inquiry"
+        target="_blank"
+        class="block w-full text-center px-4 py-3 bg-cyan-400 text-black rounded-xl font-semibold">
+        Gmail
+      </a>
+
+      <a
+        href="https://outlook.office.com/mail/deeplink/compose?to=contact@vertislabs.io&subject=Vertis%20Labs%20Inquiry"
+        target="_blank"
+        class="block w-full text-center px-4 py-3 border border-white/10 rounded-xl">
+        Outlook
+      </a>
+
+      <a
+        href="mailto:contact@vertislabs.io?subject=Vertis%20Labs%20Inquiry"
+        class="block w-full text-center px-4 py-3 border border-white/10 rounded-xl">
+        Default Email App
+      </a>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+function openContactModal() {
+  document.getElementById('contactModal').classList.remove('hidden');
+  document.getElementById('contactModal').classList.add('flex');
+}
+
+function closeContactModal() {
+  document.getElementById('contactModal').classList.add('hidden');
+  document.getElementById('contactModal').classList.remove('flex');
+}
+</script>
 
 </body>
 </html>
